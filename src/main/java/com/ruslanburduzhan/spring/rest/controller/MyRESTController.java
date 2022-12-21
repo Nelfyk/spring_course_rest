@@ -46,6 +46,7 @@ public class MyRESTController {
         if(employeeService.getEmployee(id)==null){
             throw new NoSuchEmployeeException("There is no Employee with ID = "+id);
         }
-        return "Employee with ID = \"+id+\" was deleted.";
+        employeeService.deleteEmployee(id);
+        return "Employee with ID = "+id+" was deleted.";
     }
 }
